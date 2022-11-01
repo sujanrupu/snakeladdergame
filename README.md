@@ -10,4 +10,7 @@ This is a data structure and algorithm project in the domain of 2D array. In thi
 
 
 ## Screen Recording
-Uploading www_screencapture_com_2022-11-1_23_50.mp4…
+
+
+https://user-images.githubusercontent.com/103595490/199310467-3d7cb8d5-47e2-4e29-8d14-295865ba3b89.mp4
+
