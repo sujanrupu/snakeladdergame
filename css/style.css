@@ -1,0 +1,322 @@
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+@-webkit-keyframes snake_movement {
+  from {
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes snake_movement {
+  from {
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+.snakes_motion {
+  opacity: 100%;
+  overflow: hidden;
+}
+
+.snakes_motion .snakes_move {
+  width: 5vh;
+}
+
+.snakes_motion img:nth-child(1) {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.snakes_motion img:nth-child(2) {
+  position: absolute;
+  top: 30%;
+  right: 80%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.snakes_motion img:nth-child(3) {
+  position: absolute;
+  top: 0%;
+  right: 60%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.snakes_motion img:nth-child(4) {
+  position: absolute;
+  top: 30%;
+  right: 25%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.snakes_motion img:nth-child(5) {
+  position: absolute;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  top: 60%;
+  right: 25%;
+}
+
+@font-face {
+  font-family: catcafe;
+  src: url("../assets/CatCafe.ttf");
+}
+
+@font-face {
+  font-family: font2;
+  src: url("../assets/font3.ttf");
+}
+
+* {
+  scroll-behavior: smooth;
+  font-family: font2, catcafe;
+}
+
+.cvs-body {
+  height: 100vh;
+  background-color: #1b1b1b;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cvs-body #cvs {
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 2px;
+}
+
+#dice_ID {
+  border: 0;
+  width: 12vh;
+  height: 12vh;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-transform: rotate(0deg) scale(100%);
+          transform: rotate(0deg) scale(100%);
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+}
+
+#dice_ID span {
+  padding: 1.2vh;
+  width: 0.7vh;
+  height: 0.7vh;
+  border-radius: 100%;
+  background-color: black;
+}
+
+.starting-point {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 100%;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.starting-point .layer-1 {
+  position: absolute;
+  z-index: 100;
+}
+
+.starting-point .layer-1 h2 {
+  letter-spacing: 3vh;
+}
+
+.starting-point button {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: cornflowerblue;
+  -webkit-transition: background-color 0.75s ease-in-out, width 0.2s linear, height 0.2s linear, font-size 0.3s linear, letter-spacing 0.3s linear;
+  transition: background-color 0.75s ease-in-out, width 0.2s linear, height 0.2s linear, font-size 0.3s linear, letter-spacing 0.3s linear;
+  width: 20vh;
+  height: 7.5vh;
+}
+
+.starting-point footer {
+  position: absolute;
+  padding: 7.5vh;
+  bottom: 0;
+  letter-spacing: 3px;
+  font-size: 100%;
+}
+
+.winning-point {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -100vh;
+  background-color: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  -webkit-transition: margin-top 0.15s linear, background-color 0.4s linear;
+  transition: margin-top 0.15s linear, background-color 0.4s linear;
+}
+
+.winning-point .floater {
+  border-radius: 20px;
+  letter-spacing: 10px;
+  background-color: cornflowerblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75vh;
+  height: 50vh;
+}
+
+.winning-point .floater button {
+  width: 10vh;
+  height: 10vh;
+}
+
+.winning-point .floater button img {
+  width: 5vh;
+  -webkit-filter: invert(100);
+          filter: invert(100);
+}
+
+.loading-screen {
+  position: fixed;
+  z-index: 10000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: aquamarine;
+  width: 100%;
+  height: 100vh;
+}
+
+.loading-screen h2 {
+  -webkit-animation-name: loading_dots;
+          animation-name: loading_dots;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes loading_dots {
+  0% {
+    font-size: 200%;
+  }
+  50% {
+    font-size: 300%;
+  }
+  100% {
+    font-size: 200%;
+  }
+}
+
+@keyframes loading_dots {
+  0% {
+    font-size: 200%;
+  }
+  50% {
+    font-size: 300%;
+  }
+  100% {
+    font-size: 200%;
+  }
+}
+
+@media (min-width: 576px) {
+  #dice_ID {
+    margin: 10vh !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #dice_ID {
+    margin: 20vh !important;
+  }
+}
+
+@media (min-width: 992px) {
+  #dice_ID {
+    margin: 30vh !important;
+  }
+  .snakes_move {
+    width: 15vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  #dice_ID {
+    margin: 30vh !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
