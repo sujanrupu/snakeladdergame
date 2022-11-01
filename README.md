@@ -1,6 +1,6 @@
 # Snake Ladder Game
 * <a href="https://sujanrupu.github.io/snakeladdergame/" target="_blank">Live Demo</a> <br />
-This is a data structure and algorithm project in the domain of 2D array. In this game, all the segments are considered as the array elements and the game board is cosidered as a two dimensional array.<br /> When the user moves the dice, then the traversal operation of the array takes place and at the scoring or loosing points the insertion and deletion operaion of the array takes place.
+* This is a data structure and algorithm project in the domain of 2D array. In this game, all the segments are considered as the array elements and the game board is cosidered as a two dimensional array.<br /> When the user moves the dice, then the traversal operation of the array takes place and at the scoring or loosing points the insertion and deletion operaion of the array takes place.
 * When the user uses the ladder, then actually there is an insertion opeartion of the two dimensional array at a particular index.
 * When the user falling down by the snake's mouth, then the deletion operation of the two dimensional array from any particular index takes place.
 
